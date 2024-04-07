@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewData["Title"] = "Add_book";
+    Layout = "~/Views/Shared/_Admin_Layout.cshtml";
+}
+<link rel="stylesheet" href="~/admin/css/add_book.css">
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <!-- Main content -->
+    <section class="content">
+        
+        <div id="buyer-box">
+            <div class="input-data">
+                <h1>Add Book</h1>
+
+                <form method="post" enctype="multipart/form-data">
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Book Name</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="" name="book_name">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Author Name</label>
+                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="" name="author_name">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputName1">ISBN</label>
+                            <input type="text" class="form-control" id="exampleInputName1" placeholder="" name="isbn">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputName1">Description</label>
+                            <input type="text" class="form-control" id="exampleInputName1" placeholder="" name="description">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputName1">Price</label>
+                            <input type="text" class="form-control" id="exampleInputName1" placeholder="" name="price">
+                        </div>
+                        <div class="form-group">
+                            <label>Image:</label>
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" name="image">
+                                <label class="custom-file-label">Choose file</label>
+                            </div>
+                        </div>
+                        <input type="submit" value="submit" />
+                        </div>
+                </form>
+                </div>
+            </div>
+    </section>
+    <!-- /.content -->
+</div>

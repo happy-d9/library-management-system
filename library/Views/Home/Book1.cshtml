@@ -1,0 +1,259 @@
+﻿
+@{
+    ViewData["Title"] = "Book1";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Start: Page Banner -->
+<section class="page-banner services-banner">
+        <div class="container">
+            <div class="banner-header">
+                <h2>Books & Media Listing</h2>
+                <span class="underline center"></span>
+                <p class="lead">Proin ac eros pellentesque dolor pharetra tempo.</p>
+            </div>
+            <div class="breadcrumb">
+                <ul>
+                   
+                    <li>Books List</li>
+                </ul>
+            </div>
+        </div>
+</section>
+<!-- End: Page Banner -->
+<!-- Start: Products Section -->
+<div id="content" class="site-content">
+    <div id="primary" class="content-area">
+        <main id="main" class="site-main">
+            <div class="books-media-gird">
+                <div class="container">
+                    <div class="row">
+                        @{
+                            foreach (System.Data.DataRow dr in ViewBag.add_book.Rows)
+                            {
+                                <div class="col-md-6">
+                                    <div class="books-gird">
+                                        <ul>
+                                            <li>
+                                                <figure>
+                                                    <img class="img-fluid rounded" src="~/images/@dr["photo"].ToString()" width="100%">
+                                                    <figcaption>
+                                                        <p><strong>@dr["book_name"].ToString()</strong></p>
+                                                        <p><strong>Author:</strong>  @dr["author_name"].ToString()</p>
+                                                    </figcaption>
+                                                </figure>
+                                                <div class="book-list-icon blue-icon"></div>
+                                                <div class="single-book-box">
+                                                    <div class="post-detail">
+                                                        <header class="entry-header">
+                                                            <h3 class="entry-title"><a>@dr["book_name"].ToString()</a></h3>
+                                                            <ul>
+                                                                <li><strong>Author:</strong> @dr["author_name"].ToString()</li>
+                                                                <li><strong>ISBN:</strong> @dr["isbn"].ToString()</li>
+                                                            </ul>
+                                                        </header>
+                                                        <div class="entry-content">
+                                                            <p>@dr["description"].ToString()</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            }}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Start: Staff Picks -->
+                <section class="team staff-picks">
+                    <div class="container">
+                        <div class="center-content">
+                            <h2 class="section-title">Staff Picks</h2>
+                            <span class="underline center"></span>
+                            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                        <div class="team-list">
+                            <div class="team-member">
+                                <figure>
+                                    <img src="~/images/books-media/staff-pick/staff-picks-01.jpg" alt="Staff Pick" />
+                                </figure>
+                                <div class="content-block">
+                                    <div class="member-info">
+                                        <div class="member-thumb">
+                                            <img src="~/images/books-media/staff-pick/gail.jpg" alt="Katherine">
+                                        </div>
+                                        <div class="member-content">
+                                            <span class="designation">Downtown & Business</span>
+                                            <h4>The Collector</h4>
+                                            <ul class="social">
+                                                <li>
+                                                    <a href="#" target="_blank">
+                                                        <i class="fa fa-linkedin"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" target="_blank">
+                                                        <i class="fa fa-facebook-f"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" target="_blank">
+                                                        <i class="fa fa-twitter"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" target="_blank">
+                                                        <i class="fa fa-skype"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    <p>The executive director is a leadership role for an organization and often fulfills a motivational role in addition to office-based work.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-member">
+                                <figure>
+                                    <img src="~/images/books-media/staff-pick/staff-picks-02.jpg" alt="Staff Pick" />
+                                </figure>
+                                <div class="content-block">
+                                    <div class="member-info">
+                                        <div class="member-thumb">
+                                            <img src="~/images/books-media/staff-pick/katherine.jpg" alt="Katherine">
+                                        </div>
+                                        <div class="member-content">
+                                            <span class="designation">Book Manager</span>
+                                            <h4>Mongolia</h4>
+                                            <ul class="social">
+                                                <li>
+                                                    <a href="#" target="_blank">
+                                                        <i class="fa fa-linkedin"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" target="_blank">
+                                                        <i class="fa fa-facebook-f"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" target="_blank">
+                                                        <i class="fa fa-twitter"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" target="_blank">
+                                                        <i class="fa fa-skype"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    <p>A deputy director is a type of government position in which the individual works directly underneath an executive director.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-member">
+                                <figure>
+                                    <img src="~/images/books-media/staff-pick/staff-picks-03.jpg" alt="Staff Pick" />
+                                </figure>
+                                <div class="content-block">
+                                    <div class="member-info">
+                                        <div class="member-thumb">
+                                            <img src="~/images/books-media/staff-pick/chris.jpg" alt="Katherine">
+                                        </div>
+                                        <div class="member-content">
+                                            <span class="designation">Counter Manager</span>
+                                            <h4>The Revolution</h4>
+                                            <ul class="social">
+                                                <li>
+                                                    <a href="#" target="_blank">
+                                                        <i class="fa fa-linkedin"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" target="_blank">
+                                                        <i class="fa fa-facebook-f"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" target="_blank">
+                                                        <i class="fa fa-twitter"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" target="_blank">
+                                                        <i class="fa fa-skype"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    <p>A librarian is responsible for overseeing the daily operations of a library at the public or private level. </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- End: Staff Picks -->
+            </div>
+        </main>
+    </div>
+</div>
+<!-- End: Products Section -->
+<!-- Start: Social Network -->
+<section class="social-network section-padding">
+    <div class="container">
+        <div class="center-content">
+            <h2 class="section-title">Follow Us</h2>
+            <span class="underline center"></span>
+            <p class="lead">The library plays an important role in the field of education.</p>
+        </div>
+        <ul>
+            <li>
+                <a class="facebook" href="#" target="_blank">
+                    <span>
+                        <i class="fa fa-facebook-f"></i>
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a class="twitter" href="#" target="_blank">
+                    <span>
+                        <i class="fa fa-twitter"></i>
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a class="google" href="#" target="_blank">
+                    <span>
+                        <i class="fa fa-google-plus"></i>
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a class="rss" href="#" target="_blank">
+                    <span>
+                        <i class="fa fa-rss"></i>
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a class="linkedin" href="#" target="_blank">
+                    <span>
+                        <i class="fa fa-linkedin"></i>
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a class="youtube" href="#" target="_blank">
+                    <span>
+                        <i class="fa fa-youtube"></i>
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</section>
+<!-- End: Social Network -->
+

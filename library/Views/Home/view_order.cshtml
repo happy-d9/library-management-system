@@ -1,0 +1,98 @@
+﻿
+@{
+    ViewData["Title"] = "view_order";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<section class="page-banner services-banner">
+    <div class="container">
+        <div>
+            <div class="banner-header">
+                <h2>Order details</h2>
+                <span class="underline center"></span>
+                <p class="lead">The standard chunk of Lorem Ipsum used since</p>
+            </div>
+            <div class="breadcrumb">
+                <ul>
+
+                    <li>Order details</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Start: Cart Section -->
+<div id="content" class="site-content">
+    <div id="primary" class="content-area">
+        <main id="main" class="site-main">
+            <div class="cart-main">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="page type-page status-publish hentry">
+                                <div class="entry-content">
+                                    <div class="woocommerce table-tabs" id="responsiveTabs">
+                                        <div class="tab-content">
+                                            <div id="sectionA" class="tab-pane fade in active">
+                                                <form method="post">
+                                                    <table class="table table-bordered shop_table cart">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>ID</th>
+                                                                <th>Book Name</th>
+                                                                <th>Auhtor Name</th>
+                                                                <th>ISBN</th>
+                                                                <th>Description</th>
+                                                                <th>Image</th>
+                                                                <th>Price</th>
+                                                                <th>Action</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            @{
+                                                                foreach (System.Data.DataRow dr in ViewBag.show_order.Rows)
+                                                                {
+                                                                    <tr class="cart_item">
+                                                                        <td data-title="cbox" class="product-cbox">@dr["id"].ToString()</td>
+                                                                        <td data-title="Product" class="product-name">
+                                                                            @dr["book_name"].ToString()
+                                                                        </td>
+                                                                        <td data-title="Product" class="product-name">
+                                                                            @dr["author_name"].ToString()
+                                                                        </td>
+                                                                        <td data-title="Product" class="product-name">
+                                                                            @dr["isbn"].ToString()
+                                                                        </td>
+
+                                                                        <td data-title="Product" class="product-name">
+                                                                            @dr["description"].ToString()
+                                                                        </td>
+                                                                        <td>
+                                                                            <img class="img-fluid rounded" src="~/images/@dr["photo"].ToString()" alt="Book Image" width="100px" height="100px">
+                                                                        </td>
+                                                                        <td data-title="Price" class="product-price">
+                                                                            <span>@dr["price"].ToString()</span>
+                                                                        </td>
+                                                                        <td data-title="Payment" class="product-price">
+                                                                            @Html.ActionLink("Remove","delete_order", new {id = dr["id"].ToString()})
+                                                                        </td>
+                                                                    </tr>
+                                                                }
+                                                            }
+                                                        </tbody>
+                                                    </table>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!-- .entry-content -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+<!-- End: Cart Section -->

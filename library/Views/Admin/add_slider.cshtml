@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "add_slider";
+    Layout = "~/Views/Shared/_Admin_Layout.cshtml";
+}
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <!-- Main content -->
+    <section class="content">
+
+        <div id="buyer-box">
+            <h1 class="heading">Add Slider</h1>
+            <div class="input-data">
+                <h1></h1>
+                @* <link rel="stylesheet" href="~/dist/css/add_book.css"> *@
+                <form method="post" enctype="multipart/form-data">
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Title</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="" name="title">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Name</label>
+                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="" name="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputName1">Description</label>
+                            <input type="text" class="form-control" id="exampleInputName1" placeholder="" name="description">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputFile">image</label>
+                            <div class="input-group">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="exampleInputFile" name="photo">
+                                    <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                                </div>
+                                <div class="input-group-append">
+                                    <span class="input-group-text">Upload</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.card-body -->
+
+                    <input id="insert" type="submit" name="submit" value="submit" asp-action="Slider_view" asp-controller="Admin" />
+                </form>
+                <!-- Main content -->
+
+    </section>
+</div>

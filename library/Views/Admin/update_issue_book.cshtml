@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewData["Title"] = "update_issue_book";
+    Layout = "~/Views/Shared/_Admin_Layout.cshtml";
+}
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <!-- Main content -->
+    <section class="content">
+        <div id="buyer-box">
+            <h1 class="heading pt-5">Issue Book</h1>
+            <div class="input-data">
+                <h1></h1>
+                <link rel="stylesheet" href="~/admin/css/add_book.css">
+                @{
+                    foreach (System.Data.DataRow dr in ViewBag.update_issue_book.Rows)
+                    {
+                        <form method="post">
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label for="exampleInputName1">Member Name</label>
+                                    <input type="text" class="form-control" id="exampleInputName1" placeholder="" name="student_name" value="@dr["student_name"].ToString()">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Book Name</label>
+                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="" name="book_name" value="@dr["book_name"].ToString()">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Author Name</label>
+                                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="" name="author_name" value="@dr["author_name"].ToString()">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleInputName1">Date</label>
+                                    <input type="text" class="form-control" id="exampleInputName1" placeholder="" name="date" value="@dr["date"].ToString()">
+                                </div>
+                            </div>
+                            <!-- /.card-body -->
+                            <div class="col-4">
+                                <input type="submit" class="btn btn-primary btn-block" value="submit">
+                            </div>
+                        </form>
+                    }}
+                    </div>
+        </div>
+    </section>
+    <!-- /.content -->
+</div>

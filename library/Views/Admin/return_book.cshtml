@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewData["Title"] = "return_book";
+    Layout = "~/Views/Shared/_Admin_Layout.cshtml";
+}
+
+<div class="content-wrapper">
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- left column -->
+                <div class="col-md-12">
+                    <!-- jquery validation -->
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">Return Book</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <!-- form start -->
+                        <form id="quickForm" method="post">
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label for="exampleInputname">Book No</label>
+                                    <input type="number" class="form-control" name="book_no" id="exampleInputEmail1" placeholder="Enter Book No" maxlength="7">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputaname">Book Title</label>
+                                    <input type="text" class="form-control" name="book_title" id="exampleInputEmail1" placeholder="Enter Book Title">
+                                </div>
+                                <table>
+                                    <tr class="form-group row" style="margin-left:1px">
+                                        <td class="col-2" style="border:1px solid #ced4da">Total Oty.</td>
+                                        <td class="col-2" style="border:1px solid #ced4da"><input type="number" class="form-control" name="oty" style="border:none" /></td>
+                                        <td class="col-2" style="border:1px solid #ced4da">Current Available</td>
+                                        <td class="col-2" style="border:1px solid #ced4da"><input type="number" class="form-control" name="current" style="border:none" /></td>
+                                        <td class="col-2" style="border:1px solid #ced4da">Borrowed</td>
+                                        <td class="col-2" style="border:1px solid #ced4da"><input type="number" class="form-control" name="Borrowed" style="border:none" /></td>
+                                    </tr>
+                                    <tr class="form-group row" style="margin-left:1px">
+                                        <td class="col-3 " style="border:1px solid #ced4da">Price</td>
+                                        <td class="col-2" style="border:1px solid #ced4da"><input type="number" class="form-control" name="price" style="border:none" /></td>
+                                        <td class="col-3" style="border:1px solid #ced4da">ISBN</td>
+                                        <td class="col-4" style="border:1px solid #ced4da"><input type="number" class="form-control" name="isbn" style="border:none " /></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <!-- /.card-body -->
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- /.card -->
+                </div>
+                <!--/.col (left) -->
+                <!-- right column -->
+                <div class="col-md-6">
+                </div>
+                <!--/.col (right) -->
+            </div>
+            <!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </section>
+</div>
+

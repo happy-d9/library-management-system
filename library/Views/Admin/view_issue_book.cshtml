@@ -1,0 +1,63 @@
+﻿@{
+    ViewData["Title"] = "view_issue_book";
+    Layout = "~/Views/Shared/_Admin_Layout.cshtml";
+}
+
+<div id="content-page" class="content-page">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="iq-card">
+                    <div class="iq-card-header d-flex justify-content-between">
+                        <div class="iq-header-title">
+                            <h4 class="card-title">Issue Book</h4>
+                        </div>
+                        <div class="iq-card-header-toolbar d-flex align-items-center">
+                            <a asp-action="Issue_books" asp-controller="Admin" class="btn btn-primary">Add Issue Books</a>
+                        </div>
+                    </div>
+                    <div class="iq-card-body">
+                        <div class="table-responsive">
+                            <table class=" table table-bordered" style="width:100%">
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Member Name</th>
+                                    <th>Book Name</th>
+                                    <th>Author Name</th>
+                                    <th>Date</th>
+                                    <th>Delete</th>
+                                </tr>
+                                <tbody class="tbody1">
+                                    @{
+                                        foreach (System.Data.DataRow dr in ViewBag.issue_book.Rows)
+                                        {
+                                            <tr>
+                                                <td>@dr["id"].ToString()</td>
+                                                <td>@dr["student_name"].ToString()</td>
+                                                <td>@dr["book_name"].ToString()</td>
+                                                <td>@dr["author_name"].ToString()</td>
+                                                <td>@dr["date"].ToString()</td>
+                                                <td>
+                                                    <div class="flex align-items-center list-user-action">
+                                                        <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" asp-controller="Admin" asp-action="update_issue_book" asp-route-id="@dr["id"]" width="100px">
+                                                            <i class="ri-pencil-line"></i>
+                                                        </a>
+                                                        <a class="bg-primary" data-toggle="tooltip" data-placement="top" title="Delete" data-original-title="Delete" href="@Url.Action("delete_issue_book", "Admin", new { id = dr["id"] })">
+                                                            <i class="ri-delete-bin-line"></i>
+                                                        </a>
+
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        }
+                                    }
+                                </tbody>
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

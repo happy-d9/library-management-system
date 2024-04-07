@@ -1,0 +1,53 @@
+﻿@{
+    ViewData["Title"] = "update_book";
+    Layout = "~/Views/Shared/_Admin_Layout.cshtml";
+}
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <!-- Main content -->
+    <section class="content">
+
+        <div id="buyer-box">
+            <div class="input-data">
+                <h1>Update Book</h1>
+
+                <link rel="stylesheet" href="~/admin/css/add_book.css">
+                @{
+                    foreach (System.Data.DataRow dr in ViewBag.update_book.Rows){
+                        <form method="post" enctype="multipart/form-data">
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Book Name</label>
+                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="" name="book_name" value="@dr["book_name"].ToString()">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Author Name</label>
+                                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="" name="author_name" value="@dr["author_name"].ToString()">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputName1">ISBN</label>
+                                    <input type="text" class="form-control" id="exampleInputName1" placeholder="" name="isbn" value="@dr["isbn"].ToString()">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputName1">Description</label>
+                                    <input type="text" class="form-control" id="exampleInputName1" placeholder="" name="description" value="@dr["description"].ToString()">
+                                </div>
+                                <div class="form-group">
+                                    <label>Image </label>
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" name="image" value="@dr["photo"].ToString()">
+                                        <label class="custom-file-label">Choose file</label>
+                                    </div>
+                                </div>
+                                <input type="submit" value="submit" />
+                            </div>
+                        </form>
+                    }}
+                    </div>
+
+            <div class="right"></div>
+        </div>
+    </section>
+    <!-- /.content -->
+</div>

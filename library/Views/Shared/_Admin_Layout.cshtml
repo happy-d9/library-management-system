@@ -1,0 +1,203 @@
+﻿@{
+    Layout = null;
+}
+
+<!doctype html>
+<html lang="en">
+
+<!-- Mirrored from templates.iqonic.design/booksto/html/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 14 Jul 2023 09:32:55 GMT -->
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Libraria Admin Dashboard </title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="~/admin/images/favicon.ico" />
+    <link rel="stylesheet" href="~/admin/css/dataTables.bootstrap4.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/admin/css/bootstrap.min.css">
+    <!-- Typography CSS -->
+    <link rel="stylesheet" href="~/admin/css/typography.css">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="~/admin/css/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="~/admin/css/responsive.css">
+</head>
+<body>
+    <div id="loading">
+        <div id="loading-center">
+        </div>
+    </div>
+    <div class="wrapper">
+        <!-- Sidebar  -->
+
+        <div class="iq-sidebar">
+            <div class="iq-sidebar-logo d-flex justify-content-between">
+                <a asp-action="Dashboard" asp-controller="Admin" class="header-logo">
+                    <img src="~/admin/images/logo.png" class="img-fluid rounded-normal" alt="">
+                    <div class="logo-title">
+                        <span class="text-primary text-uppercase">LIBRARIA</span>
+                    </div>
+                </a>
+                <div class="iq-menu-bt-sidebar">
+                    <div class="iq-menu-bt align-self-center">
+                        <div class="wrapper-menu">
+                            <div class="main-circle"><i class="las la-bars"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="sidebar-scrollbar">
+                <nav class="iq-sidebar-menu">
+                    <ul id="iq-sidebar-toggle" class="iq-menu">
+                        <li class="active"><a asp-action="Dashboard" asp-controller="Admin"><i class="las la-house-damage"></i>Home Page</a></li>
+
+                        <li>
+                            <a href="#userinfo" class="iq-waves-effect" data-toggle="collapse" aria-expanded="false"><span class="ripple rippleEffect"></span><i class="ri-book-2-line iq-arrow-left"></i><span>Books</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+                            <ul id="userinfo" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle" style="">
+                                <li><a asp-action="Add_book" asp-controller="Admin"><i class="las la-plus-circle"></i>Add Book</a></li>
+                                <li><a asp-action="view_book" asp-controller="Admin"><i class="las la-eye"></i>View Book</a></li>
+                                <li><a asp-action="Issue_books" asp-controller="Admin"><i class="las la-plus-circle"></i>Issue Book</a></li>
+                                <li><a asp-action="view_issue_book" asp-controller="Admin"><i class="las la-eye"></i>View Issue Book</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#category" class="iq-waves-effect" data-toggle="collapse" aria-expanded="false"><span class="ripple rippleEffect"></span><i class="las la-user-tie"></i><span>Member</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+                            <ul id="category" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle" style="">
+                                <li><a asp-action="Members" asp-controller="Admin"><i class="las la-user-tie"></i>Members</a></li>
+                                <li><a asp-action="view_member" asp-controller="Admin"><i class="las la-user-tie"></i>View Member</a></li>
+
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <div id="sidebar-bottom" class="p-3 position-relative">
+                    <div class="iq-card">
+                        <div class="iq-card-body">
+                            <div class="sidebarbottom-content">
+                                <div class="image"><img src="~/admin/images/page-img/side-bkg.png" alt=""></div>
+                                <a asp-action="Logout" asp-controller="Admin" class="btn w-100 btn-primary mt-4 view-more">logout</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- TOP Nav Bar -->
+
+        <div class="iq-top-navbar">
+            <div class="iq-navbar-custom">
+                <nav class="navbar navbar-expand-lg navbar-light p-0">
+                    <div class="iq-menu-bt d-flex align-items-center">
+                        <div class="wrapper-menu">
+                            <div class="main-circle"><i class="las la-bars"></i></div>
+                        </div>
+                        <div class="iq-navbar-logo d-flex justify-content-between">
+                            <a href="index.html" class="header-logo">
+                                <img src="~/admin/images/logo.png" class="img-fluid rounded-normal" alt="">
+                                <div class="logo-title">
+                                    <span class="text-primary text-uppercase">Libraria</span>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                    <div class="navbar-breadcrumb">
+                        <h5 class="mb-0">Library</h5>
+                        <nav aria-label="breadcrumb">
+                            <ul class="breadcrumb">
+                                <li class="breadcrumb-item"><a asp-action="Dashboard" asp-controller="Admin">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Home Page</li>
+                            </ul>
+                        </nav>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- TOP Nav Bar END -->
+        <!-- Page Content  -->
+        @RenderBody();
+    </div>
+    <!-- Wrapper END -->
+    <!-- Footer -->
+    <footer class="iq-footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item"><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li class="list-inline-item"><a href="terms-of-service.html">Terms of Use</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-6 text-right">
+                    Copyright 2020 <a href="#">Libraria</a> All Rights Reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer END -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="~/admin/js/jquery.min.js"></script>
+    <script src="~/admin/js/popper.min.js"></script>
+    <script src="~/admin/js/bootstrap.min.js"></script>
+    <script src="~/admin/js/jquery.dataTables.min.js"></script>
+
+    <script src="~/admin/js/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Appear JavaScript -->
+    <script src="~/admin/js/jquery.appear.js"></script>
+    <!-- Countdown JavaScript -->
+    <script src="~/admin/js/countdown.min.js"></script>
+    <!-- Counterup JavaScript -->
+    <script src="~/admin/js/waypoints.min.js"></script>
+    <script src="~/admin/js/jquery.counterup.min.js"></script>
+    <!-- Wow JavaScript -->
+    <script src="~/admin/js/wow.min.js"></script>
+    <!-- Apexcharts JavaScript -->
+    <script src="~/admin/js/apexcharts.js"></script>
+    <!-- Slick JavaScript -->
+    <script src="~/admin/js/slick.min.js"></script>
+    <!-- Select2 JavaScript -->
+    <script src="~/admin/js/select2.min.js"></script>
+    <!-- Owl Carousel JavaScript -->
+    <script src="~/admin/js/owl.carousel.min.js"></script>
+    <!-- Magnific Popup JavaScript -->
+    <script src="~/admin/js/jquery.magnific-popup.min.js"></script>
+    <!-- Smooth Scrollbar JavaScript -->
+    <script src="~/admin/js/smooth-scrollbar.js"></script>
+    <!-- lottie JavaScript -->
+    <script src="~/admin/js/lottie.js"></script>
+    <!-- am core JavaScript -->
+    <script src="~/admin/js/core.js"></script>
+    <!-- am charts JavaScript -->
+    <script src="~/admin/js/charts.js"></script>
+    <!-- am animated JavaScript -->
+    <script src="~/admin/js/animated.js"></script>
+    <!-- am kelly JavaScript -->
+    <script src="~/admin/js/kelly.js"></script>
+    <!-- am maps JavaScript -->
+    <script src="~/admin/js/maps.js"></script>
+    <!-- am worldLow JavaScript -->
+    <script src="~/admin/js/worldLow.js"></script>
+    <!-- Raphael-min JavaScript -->
+    <script src="~/admin/js/raphael-min.js"></script>
+    <!-- Morris JavaScript -->
+    <script src="~/admin/js/morris.js"></script>
+    <!-- Morris min JavaScript -->
+    <script src="~/admin/js/morris.min.js"></script>
+    <!-- Flatpicker Js -->
+    <script src="~/admin/js/flatpickr.js"></script>
+    <!-- Style Customizer -->
+    <script src="~/admin/js/style-customizer.js"></script>
+    <!-- Chart Custom JavaScript -->
+    <script src="~/admin/js/chart-custom.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="~/admin/js/custom.js"></script>
+    <script src="~/admin/js/refresh.js"></script>
+</body>
+
+<!-- Mirrored from templates.iqonic.design/booksto/html/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 14 Jul 2023 09:33:06 GMT -->
+</html>
+
+

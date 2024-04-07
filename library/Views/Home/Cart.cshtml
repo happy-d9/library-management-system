@@ -1,0 +1,166 @@
+﻿
+@{
+    ViewData["Title"] = "Cart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Start: Page Banner -->
+<section class="page-banner services-banner">
+    <div class="container">
+        <div class="banner-header">
+            <h2>Cart Page</h2>
+            <span class="underline center"></span>
+            <p class="lead">Proin ac eros pellentesque dolor pharetra tempo.</p>
+        </div>
+        <div class="breadcrumb">
+            <ul>
+                
+                <li>Cart</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- End: Page Banner -->
+<!-- Start: Cart Section -->
+<div id="content" class="site-content">
+    <div id="primary" class="content-area">
+        <main id="main" class="site-main">
+            <div class="cart-main">
+                <div class="container">
+                    <div class="row">
+                        <div class="cart-head">
+                            <div class="col-xs-12 col-sm-6 account-option">
+                                <strong>Scott Fitzgerald</strong>
+                                <ul>
+                                    <li><a href="#">Edit Account</a></li>
+                                    <li class="divider">|</li>
+                                    <li><a href="#">Edit Pin </a></li>
+                                </ul>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 library-info">
+                                <ul>
+                                    <li>
+                                        <strong>Home Library:</strong>
+                                        Stephen A. Schwarzman Building
+                                    </li>
+                                    <li>
+                                        <strong>Email:</strong>
+                                        <a href="mailto:scottfitzgerald@gmail.com">scottfitzgerald@gmail.com</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="page type-page status-publish hentry">
+                                <div class="entry-content">
+                                    <div class="woocommerce table-tabs" id="responsiveTabs">
+                                        <div class="tab-content">
+                                            <div id="sectionA" class="tab-pane fade in active">
+                                                <form method="post">
+                                                    <table class="table table-bordered shop_table cart">
+                                                        <thead>
+                                                            <tr>
+                                                                <th class="product-name">No</th>
+                                                                <th class="product-name">Title</th>
+                                                                <th class="product-quantity">Action</th>
+                                                                <th class="product-subtotal">Total Price</th>
+                                                                <th class="product-subtotal">Payment Method</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                             @{foreach (System.Data.DataRow dr in ViewBag.view_cart.Rows)
+                                    {
+                                                            <tr class="cart_item">
+                                                                <td data-title="cbox" class="product-cbox">@dr["id"].ToString()</td>
+                                                                <td data-title="Product" class="product-name">
+                                                                    <img class="img-fluid rounded" src="~/images/@dr["photo"].ToString()" alt="Book Image" width="100px" height="100px">
+                                                                    <span class="product-detail">
+                                                                        <a><strong>@dr["book_name"].ToString()</strong></a>
+                                                                        <span><strong>Author:</strong>@dr["author_name"].ToString()</span>
+                                                                        <span><strong>ISBN:</strong> @dr["isbn"].ToString()</span>
+                                                                    </span>
+                                                                </td>
+                                                                <td data-title="action" class="product-action">
+                                                                            <a class="btn btn-primary" href="/Home/order/@dr["id"].ToString()">order</a>
+                                                                </td>
+                                                                <td data-title="Price" class="product-price">
+                                                                    <span>@dr["price"].ToString()</span>
+                                                                </td>
+                                                                        <td data-title="Payment" class="product-price">
+                                                                        <span>Cash On Delivery</span>
+                                                                        </td>
+                                                            </tr>
+                                                            }}
+                                                        </tbody>
+                                                    </table>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!-- .entry-content -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+<!-- End: Cart Section -->
+<!-- Start: Social Network -->
+<section class="social-network section-padding">
+    <div class="container">
+        <div class="center-content">
+            <h2 class="section-title">Follow Us</h2>
+            <span class="underline center"></span>
+            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <ul>
+            <li>
+                <a class="facebook" href="#" target="_blank">
+                    <span>
+                        <i class="fa fa-facebook-f"></i>
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a class="twitter" href="#" target="_blank">
+                    <span>
+                        <i class="fa fa-twitter"></i>
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a class="google" href="#" target="_blank">
+                    <span>
+                        <i class="fa fa-google-plus"></i>
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a class="rss" href="#" target="_blank">
+                    <span>
+                        <i class="fa fa-rss"></i>
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a class="linkedin" href="#" target="_blank">
+                    <span>
+                        <i class="fa fa-linkedin"></i>
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a class="youtube" href="#" target="_blank">
+                    <span>
+                        <i class="fa fa-youtube"></i>
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</section>
+<!-- End: Social Network -->
+

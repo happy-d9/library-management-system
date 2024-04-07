@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewData["Title"] = "update_member";
+    Layout = "~/Views/Shared/_Admin_Layout.cshtml";
+}
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <!-- Main content -->
+    <section class="content">
+
+        <div id="buyer-box">
+            <h1 class="pt-4">Member Book</h1>
+            <div class="input-data">
+
+                <link rel="stylesheet" href="~/admin/css/add_book.css">
+                @{
+                    foreach (System.Data.DataRow dr in ViewBag.update_member.Rows)
+                    {
+                        <form method="post" enctype="multipart/form-data">
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label for="exampleInputName">Name</label>
+                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="" name="name" value="@dr["name"].ToString()">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail">Email</label>
+                                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="" name="email" value="@dr["email"].ToString()">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputNumber1">Age</label>
+                                    <input type="text" class="form-control" id="exampleInputNumber1" placeholder="" name="age" value="@dr["age"].ToString()">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputNumber1">Contact Number</label>
+                                    <input type="text" class="form-control" id="exampleInputName1" placeholder="" name="contact_number" value="@dr["contact_number"].ToString()">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputNumber1">Deposite</label>
+                                    <input type="text" class="form-control" id="exampleInputName1" placeholder="" name="deposite" value="@dr["deposite"].ToString()">
+                                </div>
+                                <input type="submit" value="submit" />
+                        </form>
+                    }}
+                    </div>
+        </div>
+    </section>
+</div>
